@@ -7,13 +7,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-
+import com.sachin.jokes.Joker;
 public class MainActivity extends ActionBarActivity {
+
+    private Joker joke;
+    Toast mToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        joke = Joker.getInstance();
     }
 
 
@@ -40,7 +45,12 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void tellJoke(View view){
-        Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
+        if(mToast != null)
+        {
+            mToast.cancel();
+        }
+        mToast = Toast.makeText(this,joke.getRandomJoke(), Toast.LENGTH_LONG);
+        mToast.show();
     }
 
 

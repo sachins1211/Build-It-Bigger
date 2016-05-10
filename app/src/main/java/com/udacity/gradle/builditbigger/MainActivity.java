@@ -1,18 +1,23 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.sachin.androidjokes.JokeActivity;
 import com.sachin.jokes.Joker;
-public class MainActivity extends ActionBarActivity {
+
+public class MainActivity extends AppCompatActivity {
 
     private Joker joke;
     Toast mToast;
-
+    private Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +48,7 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
+/*
     public void tellJoke(View view){
         if(mToast != null)
         {
@@ -52,6 +57,13 @@ public class MainActivity extends ActionBarActivity {
         mToast = Toast.makeText(this,joke.getRandomJoke(), Toast.LENGTH_LONG);
         mToast.show();
     }
-
+*/
+    public void tellJoke(View view){
+        Intent intent = new Intent(getApplicationContext(), JokeActivity.class);
+        intent.putExtra(JokeActivity.EXTRA_JOKE, joke.getRandomJoke());
+        if(intent.resolveActivity(getPackageManager())!=null) {
+            startActivity(intent);
+        }
+    }
 
 }

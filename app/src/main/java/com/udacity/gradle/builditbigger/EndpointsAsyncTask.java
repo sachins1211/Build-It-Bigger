@@ -5,10 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
-
 import java.io.IOException;
-import java.util.concurrent.ExecutionException;
-
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
@@ -59,7 +56,6 @@ class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
 
     @Override
     protected void onPostExecute(String result) {
-        //Toast.makeText(context, result, Toast.LENGTH_LONG).show();
         if (result != null) {
             Intent intent = new Intent(context, JokeActivity.class);
             intent.putExtra(JokeActivity.EXTRA_JOKE,result);

@@ -38,12 +38,6 @@ private static Joker instance;
         return instance;
     }
 
-/*
-    public String getRandomJoke() {
-        Random random = new Random();
-        return jokes.get(random.nextInt(jokes.size()));
-    }
-*/
    public Jokes getRandomJoke() {
         Random random = new Random();
         return new Jokes(jokes.get(random.nextInt(jokes.size())));

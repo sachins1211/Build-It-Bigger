@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        joke = Joker.getInstance();
+       // joke = Joker.getInstance();
     }
 
 
@@ -58,12 +58,17 @@ public class MainActivity extends AppCompatActivity {
         mToast.show();
     }
 */
+    /*
     public void tellJoke(View view){
         Intent intent = new Intent(getApplicationContext(), JokeActivity.class);
         intent.putExtra(JokeActivity.EXTRA_JOKE, joke.getRandomJoke());
         if(intent.resolveActivity(getPackageManager())!=null) {
             startActivity(intent);
         }
+    }
+    */
+    public void tellJoke(View view){
+        new EndpointsAsyncTask().execute(this);
     }
 
 }

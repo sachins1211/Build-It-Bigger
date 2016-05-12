@@ -1,5 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
+import android.app.Application;
 import android.test.AndroidTestCase;
 import android.util.Log;
 

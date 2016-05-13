@@ -17,3 +17,17 @@ allprojects {
         jcenter()
     }
 }
+
+task runTests {
+    evaluationDependsOn ":backend"
+    mustRunAfter ":backend:appengineRun"
+    dependsOn ":app:check"
+    finalizedBy ":backend:appengineStop"
+
+    project(":backend") {
+        appengine {
+            daemon true
+        }
+    }
+}
+

@@ -19,14 +19,11 @@ import javax.inject.Named;
     packagePath=""
   )
 )
-public class MyEndpoint {
 
-    /** A simple endpoint method that takes a name and says Hi back */
+public class MyEndpoint {
     @ApiMethod(name = "randomJoke")
     public Jokes randomJoke() {
         Joker joker = Joker.getInstance();
         return joker.getRandomJoke();
     }
-
-
 }

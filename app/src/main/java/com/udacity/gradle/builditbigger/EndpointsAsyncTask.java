@@ -20,7 +20,6 @@ import com.sachin.jokes.backend.myApi.model.Jokes;
  */
 class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     private static MyApi myApiService = null;
-    private Context context;
 
     @Override
     protected String doInBackground(Void... params) {

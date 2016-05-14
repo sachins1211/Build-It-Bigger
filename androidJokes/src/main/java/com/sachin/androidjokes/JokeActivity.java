@@ -18,5 +18,4 @@ public class JokeActivity extends AppCompatActivity {
         textView.setText(extras.getString(EXTRA_JOKE));
 
     }
-
 }

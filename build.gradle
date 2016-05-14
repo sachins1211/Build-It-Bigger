@@ -21,7 +21,7 @@ allprojects {
 task runTests {
     evaluationDependsOn ":backend"
     mustRunAfter ":backend:appengineRun"
-    dependsOn ":app:check"
+    dependsOn ":app:connectedCheck"
     finalizedBy ":backend:appengineStop"
 
     project(":backend") {

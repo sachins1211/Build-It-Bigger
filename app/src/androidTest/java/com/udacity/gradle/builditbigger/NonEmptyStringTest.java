@@ -13,7 +13,7 @@ public class NonEmptyStringTest extends AndroidTestCase {
         super.runTest();
 
         try {
-            String string = new EndpointsAsyncTask().execute(getContext()).get();
+            String string = new EndpointsAsyncTask().execute().get();
             assertNotNull(string);
             assertTrue(string.length() > 0);
             Log.v("NonEmpty:: ",string);

@@ -28,6 +28,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp" />
 
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/button"
+        android:visibility="gone"
+         />
+
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="wrap_content"
@@ -38,6 +47,8 @@
         ads:adSize="BANNER"
         ads:adUnitId="@string/banner_ad_unit_id">
     </com.google.android.gms.ads.AdView>
+
+
 
 </RelativeLayout>
 
